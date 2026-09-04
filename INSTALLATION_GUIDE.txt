@@ -1,0 +1,253 @@
+INSTALLATION GUIDE
+==================
+
+Project Title:
+Adversary Attack Simulation and Telemetry-Based Detection in a Cyber Range using Lightweight Alert Classification
+
+Author:
+A Swechha Sonal
+M.Tech Cyber Security
+Defence Institute of Advanced Technology (DIAT), Pune
+
+
+====================================================
+1. SYSTEM REQUIREMENTS
+====================================================
+
+Recommended OS:
+- Ubuntu 22.04 LTS
+
+Minimum Hardware:
+- 8 GB RAM
+- 4 CPU cores
+- 50 GB free storage
+
+Recommended Hardware:
+- 16 GB RAM
+- 8 CPU cores
+- SSD storage
+
+
+====================================================
+2. REQUIRED SOFTWARE
+====================================================
+
+Install the following:
+
+1. Docker
+2. Docker Compose
+3. Python 3
+4. pip
+5. Git
+
+Optional:
+- VS Code
+- Postman
+
+
+====================================================
+3. INSTALLATION OF DEPENDENCIES
+====================================================
+
+Update system:
+
+sudo apt update
+sudo apt upgrade -y
+
+
+Install Docker:
+
+sudo apt install docker.io -y
+
+Enable Docker:
+
+sudo systemctl enable docker
+sudo systemctl start docker
+
+
+Install Docker Compose:
+
+sudo apt install docker-compose -y
+
+
+Install Python:
+
+sudo apt install python3 python3-pip -y
+
+
+Verify installations:
+
+docker --version
+docker-compose --version
+python3 --version
+
+
+====================================================
+4. PROJECT STRUCTURE
+====================================================
+
+Main folders:
+
+- control-layer/
+- control_layer/
+- Cyber-Range/
+- ml_evaluation/
+- prometheus/
+- Wazuh/
+- Elastic_Kibana/
+
+
+====================================================
+5. STARTING THE CYBER RANGE
+====================================================
+
+Move to project folder:
+
+cd ~/Final_Cyber_Range_Source
+
+Start containers:
+
+docker-compose up -d
+
+Verify running containers:
+
+docker ps
+
+
+====================================================
+6. MITRE CALDERA SETUP
+====================================================
+
+Move to Caldera directory if included:
+
+cd caldera-master
+
+Start Caldera server:
+
+python3 server.py
+
+Default access:
+
+http://<server-ip>:8888
+
+
+====================================================
+7. WAZUH CONFIGURATION
+====================================================
+
+Wazuh configuration file:
+
+Wazuh/ossec.conf
+
+Configure agents if required.
+
+Restart Wazuh services after modifications.
+
+
+====================================================
+8. ELASTICSEARCH & KIBANA
+====================================================
+
+Configuration files:
+
+Elastic_Kibana/elasticsearch.yml
+Elastic_Kibana/kibana.yml
+
+Default Kibana access:
+
+http://<server-ip>:5601
+
+
+====================================================
+9. PROMETHEUS
+====================================================
+
+Prometheus configuration:
+
+prometheus/prometheus.yml
+
+
+====================================================
+10. MACHINE LEARNING EVALUATION
+====================================================
+
+Move to ML evaluation folder:
+
+cd ml_evaluation
+
+Run evaluation:
+
+python3 wazuh_ml_evaluator.py
+
+Other scripts:
+- csv_to_jsonl.py
+- split_data.py
+
+
+====================================================
+11. DATASETS AND MODELS
+====================================================
+
+Datasets:
+- Data.csv
+- data/Data.csv
+
+Model files:
+- model.json
+- model_balanced.json
+- model_strong.json
+- model_final.json
+- model_real.json
+
+
+====================================================
+12. ATTACK EXECUTION WORKFLOW
+====================================================
+
+1. Start Docker containers
+2. Launch Caldera
+3. Execute adversary operations
+4. Collect telemetry using Wazuh
+5. Monitor logs in Kibana
+6. Run ML evaluation scripts
+7. Analyze alert classification
+
+
+====================================================
+13. PORTS USED
+====================================================
+
+Caldera:
+8888
+
+Kibana:
+5601
+
+Elasticsearch:
+9200
+
+Prometheus:
+9090
+
+
+====================================================
+14. IMPORTANT NOTES
+====================================================
+
+- Ensure Docker service is running
+- Run commands with sudo if required
+- Configure firewall rules if accessing remotely
+- Some services may require additional Docker images
+- Internet access may be required for pulling containers
+
+
+====================================================
+15. PROJECT PURPOSE
+====================================================
+
+This project demonstrates adversary attack simulation, telemetry collection, SIEM integration, visualization, and lightweight ML-based alert classification in a containerized cyber range environment.
+
+
+====================================================
+16. END
+====================================================

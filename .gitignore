@@ -1,0 +1,59 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.crt
+secrets/
+credentials/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editors
+.vscode/
+.idea/
+
+# Node.js
+node_modules/
+
+# Build / generated files
+dist/
+build/
+*.tmp
+*.temp
+
+
+# Original Cyber Range attachment dataset
+Cyber-Range/trafficgen/TG/RandomFiles/
+
+# Generated traffic logs
+Cyber-Range/trafficgen/TG/TrafficLog/
+# Docker
+docker-compose.override.yml
+
+# Archives
+*.zip
+
+# Large compressed archives
+*.tar
+*.tar.gz
+*.tgz
+
+# Private / sensitive datasets
+private_data/
