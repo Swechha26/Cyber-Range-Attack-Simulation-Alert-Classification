@@ -4,7 +4,6 @@ Adversary Attack Simulation and Telemetry-Based Detection in a Cyber Range using
 Author:
 A Swechha Sonal
 M.Tech Cyber Security
-Defence Institute of Advanced Technology (DIAT), Pune
 
 Project Overview:
 This project presents the implementation of a telemetry-based cyber range integrating MITRE Caldera, Wazuh, Elasticsearch, Kibana, Prometheus, and lightweight Machine Learning techniques for adversary attack simulation, telemetry collection, alert monitoring, detection analysis, and classification of security alerts.
